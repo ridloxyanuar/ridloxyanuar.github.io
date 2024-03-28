@@ -4,67 +4,276 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Saya</title>
+    <title>Ridlo Yanuar | Personal Page</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: "Press Start 2P", system-ui;
+            font-style: normal;
+        }
+    </style>
 </head>
 
 <body class="bg-gray-100">
 
-    <!-- Navbar -->
-    <nav class="bg-blue-500 py-4">
+    <nav class="bg-blue-100 py-4 fixed top-0 left-0 w-full z-10">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center">
-                <div>
-                    <h1 class="text-white text-2xl font-bold">Portofolio Saya</h1>
+                <div class="w-1/6 md:w-1/12">
+                    <img height="48" width="48" src="images/logory.svg" alt="Gambar Portfolio"/>
                 </div>
-                <!-- Tambahkan navigasi jika diperlukan -->
+                <div class="md:hidden">
+                    <button id="burger-menu" class="block text-black hover:text-blue-900 focus:text-blue-900 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div id="menu-items" class="hidden md:block">
+                    <ul class="flex space-x-10">
+                        <li><a href="#home" class="text-black font-semibold">Home</a></li>
+                        <li><a href="#about" class="text-black font-semibold">About</a></li>
+                        <li><a href="#experience" class="text-black font-semibold">Experience</a></li>
+                        <li><a href="#portfolio" class="text-black font-semibold">Portfolio</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </nav>
 
+    <div id="mobile-menu" class="md:hidden hidden">
+        <ul class="bg-blue-100 relative top-16 left-0 w-full text-center">
+            <li><a href="#home" class="block mt-2 py-2">Home</a></li>
+            <li><a href="#about" class="block py-2">About</a></li>
+            <li><a href="#experience" class="block py-2">Experience</a></li>
+            <li><a href="#portfolio" class="block py-2">Portfolio</a></li>
+        </ul>
+    </div>
+
+
+
     <!-- Hero section -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4">Selamat Datang di Portofolio Saya</h2>
-                <p class="text-lg text-gray-600">Saya seorang backend developer yang bersemangat untuk menciptakan solusi perangkat lunak yang bermanfaat.</p>
-                <!-- Tambahkan tombol untuk mengarahkan pengunjung ke bagian yang relevan jika diperlukan -->
+    <section class="py-10 sm:py-20 bg-blue-100" id="home">
+        <div class="container mx-auto px-4 pt-8">
+            <div class="flex flex-col-reverse sm:flex-row items-center justify-between">
+                <div class="text-center sm:text-left w-full sm:w-2/4">
+                    <h2 class="text-xl sm:text-3xl font-bold text-black mb-2 mt-4 sm:mb-4 mt-0">Hi there,</h2>
+                    <div class="bg-white mb-4 py-4 px-4 w-full sm:w-3/4">
+                        <h2 class="text-xl sm:text-3xl font-bold text-blue-900 inline-block">I'm </h2>
+                        <h2 id="myname" class="text-xl sm:text-3xl font-bold text-blue-900 inline-block"></h2>
+                    </div>
+                    <p class="text-lg sm:text-xl text-black">I'm a backend developer passionate about creating useful software solutions.</p>
+                    <!-- Tambahkan tombol untuk mengarahkan pengunjung ke bagian yang relevan jika diperlukan -->
+                    <button class="mt-4 px-4 py-2 bg-blue-900 text-white rounded-full">Contact me</button> <!-- Menambahkan tombol "Hubungi Saya" -->
+                </div>
+                <img src="images/profile.svg" alt="Girl in a jacket" width="500" height="500">
             </div>
         </div>
     </section>
 
+
+
+
     <!-- Tentang Saya -->
-    <section class="py-16">
+    <section class="py-16" id="about">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-8 text-gray-800">Tentang Saya</h2>
-            <p class="text-lg text-gray-600">Di sini Anda dapat menambahkan deskripsi singkat tentang diri Anda, keahlian, pengalaman, dll.</p>
+            <h2 class="text-3xl font-bold mb-8 text-gray-800">About me</h2>
+            <p class="text-lg text-gray-600">A software engineer with experienced in several android and web projects. expert in java, kotlin, android development, php, firebase, sql, and laravel. My experience as software engineer enhanced my abilities in designing, implementing, testing, and upgrading software. One of my objectives is to keep updated with the latest IT trends and technologies. I am confident that if given the opportunity, I can be a useful talent to the company.</p>
         </div>
     </section>
 
-    <!-- Portofolio -->
-    <section class="py-16 bg-gray-100">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-8 text-gray-800">Portofolio</h2>
-            <!-- Tambahkan daftar proyek atau pekerjaan Anda dengan detail -->
+  <!-- Experience -->
+<section class="py-16 bg-blue-100" id="experience">
+    <div class="container mx-auto px-4 relative">
+        <h2 class="text-3xl font-bold mb-8 text-gray-800">Experience</h2>
+        
+        <!-- Daftar Pengalaman -->
+        <div class="grid grid-cols-2 gap-8">
+            <!-- Pengalaman 1 -->
+            <div class="bg-white rounded-lg shadow-md p-6 relative">
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Pengalaman 1</h3>
+                <p class="text-gray-600">Deskripsi singkat tentang pengalaman ini. Anda dapat menambahkan informasi mengenai peran Anda, perusahaan, dan pencapaian.</p>
+            </div>
+            
+            <!-- Pengalaman 2 -->
+            <div class="bg-white rounded-lg shadow-md p-6 relative">
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Pengalaman 2</h3>
+                <p class="text-gray-600">Deskripsi singkat tentang pengalaman ini. Anda dapat menambahkan informasi mengenai peran Anda, perusahaan, dan pencapaian.</p>
+            </div>
+            
+            <!-- Pengalaman 3 -->
+            <div class="bg-white rounded-lg shadow-md p-6 relative">
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Pengalaman 3</h3>
+                <p class="text-gray-600">Deskripsi singkat tentang pengalaman ini. Anda dapat menambahkan informasi mengenai peran Anda, perusahaan, dan pencapaian.</p>
+            </div>
+            
+            <!-- Pengalaman 4 -->
+            <div class="bg-white rounded-lg shadow-md p-6 relative">
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Pengalaman 4</h3>
+                <p class="text-gray-600">Deskripsi singkat tentang pengalaman ini. Anda dapat menambahkan informasi mengenai peran Anda, perusahaan, dan pencapaian.</p>
+            </div>
         </div>
-    </section>
+        <!-- End Daftar Pengalaman -->
+        
+        <!-- Jalur -->
+        <div class="absolute top-0 left-0 right-0 bottom-0 z-0 grid grid-cols-2 gap-4">
+            <div class="w-1 bg-blue-900 col-start-1 col-end-1 h-full"></div>
+            <div class="w-1 bg-blue-900 col-start-1 col-end-1 h-full"></div>
+            <div class="w-1 bg-blue-900 col-start-2 col-end-2 h-full"></div>
+            <div class="w-1 bg-blue-900 col-start-2 col-end-2 h-full"></div>
+        </div>
+    </div>
+</section>
 
-    <!-- Kontak -->
-    <section class="py-16">
+
+
+
+
+
+    <!-- Portfolio -->
+    <section class="py-16" id="portfolio">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-8 text-gray-800">Kontak</h2>
+            <h2 class="text-3xl font-bold mb-8 text-center text-gray-800">Let's a have a look at my Portfolio</h2>
             <!-- Tambahkan formulir kontak atau informasi kontak lainnya -->
+            <p class="text-center">i seek to push the limits of creativity to create high-engaging, user-friendly, and memorable interactive experiences.</p>
+            <!--
+            <div class="justify-center mt-8 flex flex-wrap gap-4">
+                <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                    <img class="w-full" src="images/tes.png" alt="Gambar Portfolio">
+                    <div class="px-6 py-4">
+                        <div class="font-bold text-xl mb-2">Judul Portfolio</div>
+                        <p class="text-gray-700 text-base">
+                        Deskripsi singkat tentang portfolio ini. Anda dapat menambahkan informasi mengenai teknologi yang digunakan, tujuan, atau hasil yang dicapai.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                    <img class="w-full" src="images/tes.png" alt="Gambar Portfolio">
+                    <div class="px-6 py-4">
+                        <div class="font-bold text-xl mb-2">Judul Portfolio</div>
+                        <p class="text-gray-700 text-base">
+                        Deskripsi singkat tentang portfolio ini. Anda dapat menambahkan informasi mengenai teknologi yang digunakan, tujuan, atau hasil yang dicapai.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                    <img class="w-full" src="images/tes.png" alt="Gambar Portfolio">
+                    <div class="px-6 py-4">
+                        <div class="font-bold text-xl mb-2">Judul Portfolio</div>
+                        <p class="text-gray-700 text-base">
+                        Deskripsi singkat tentang portfolio ini. Anda dapat menambahkan informasi mengenai teknologi yang digunakan, tujuan, atau hasil yang dicapai.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                    <img class="w-full" src="images/tes.png" alt="Gambar Portfolio">
+                    <div class="px-6 py-4">
+                        <div class="font-bold text-xl mb-2">Judul Portfolio</div>
+                        <p class="text-gray-700 text-base">
+                        Deskripsi singkat tentang portfolio ini. Anda dapat menambahkan informasi mengenai teknologi yang digunakan, tujuan, atau hasil yang dicapai.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="text-center mt-8">
+                <button class="px-4 py-2 bg-blue-900 text-white rounded-full">View more</button> <!-- Menambahkan tombol "Hubungi Saya" -->
+            </div> 
+            -->
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-blue-500 py-4">
+    <footer class="bg-blue-100 py-4">
         <div class="container mx-auto px-4">
-            <div class="text-center text-white">
-                <p>&copy; 2024 Portofolio Saya. Dibuat dengan Cinta dan Kode.</p>
+            <h2 class="pt-12 text-3xl font-bold mb-8 text-gray-800">
+                Let's <span class="text-blue-900">connect</span> there
+            </h2>
+            <div class="py-4 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4">
+                <div class="justify-between bg-white flex items-center px-4 py-4 w-full max-w-auto">
+                    <div>
+                        <h3 class="font-semibold">Facebook</h3>
+                        <p class="text-xs">Social media profile</p>
+                    </div>
+                    <img height="48" width="48" src="images/icons8-facebook.svg" alt="Gambar Portfolio"/>
+                </div>
+                <div class="justify-between bg-white flex items-center px-4 py-4 w-full max-w-auto">
+                    <div>
+                        <h3 class="font-semibold">Github</h3>
+                        <p class="text-xs">Code repository</p>
+                    </div>
+                    <img height="48" width="48" src="images/icons8-github.svg" alt="Gambar Portfolio"/>
+                </div>
+                <div class="justify-between bg-white flex items-center px-4 py-4 w-full max-w-auto">
+                    <div>
+                        <h3 class="font-semibold">Instagram</h3>
+                        <p class="text-xs">Social media profile</p>
+                    </div>
+                    <img height="48" width="48" src="images/icons8-instagram.svg" alt="Gambar Portfolio"/>
+                </div>
+
+                <div class="justify-between bg-white flex items-center px-4 py-4 w-full max-w-auto">
+                    <div>
+                        <h3 class="font-semibold">LinkedIn</h3>
+                        <p class="text-xs">Professional network profile</p>
+                    </div>
+                    <img height="48" width="48" src="images/icons8-linkedin.svg" alt="Gambar Portfolio"/>
+                </div>
+                <div class="justify-between bg-white flex items-center px-4 py-4 w-full max-w-auto">
+                    <div>
+                        <h3 class="font-semibold">Twitter</h3>
+                        <p class="text-xs">Social media profile</p>
+                    </div>
+                    <img height="48" width="48" src="images/icons8-twitterx.svg" alt="Gambar Portfolio"/>
+                </div>
+                <div class="justify-between bg-white flex items-center px-4 py-4 w-full max-w-auto">
+                    <div>
+                        <h3 class="font-semibold">Fiverr</h3>
+                        <p class="text-xs">Freelance page profile</p>
+                    </div>
+                    <img height="48" width="48" src="images/icons8-fiverr.svg" alt="Gambar Portfolio"/>
+                </div>
+            </div>
+            <div class="text-center mt-4 text-black text-sm">
+                <p>Copyright &copy; 2024 ridloxyanuar </p>
             </div>
         </div>
     </footer>
+
+    <!-- Load library from the CDN -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <!-- Setup and start animation! -->
+    <script>
+        var typed = new Typed('#myname', {
+            strings: ["Ridlo Yanuar."],
+            typeSpeed: 100,
+            showCursor: true,
+            loop: true
+        });
+
+        document.getElementById("burger-menu").addEventListener("click", function() {
+        var mobileMenu = document.getElementById("mobile-menu");
+        mobileMenu.classList.toggle("hidden");
+
+        window.addEventListener("scroll", function() {
+            var mobileMenu = document.getElementById("mobile-menu");
+            if (!mobileMenu.classList.contains("hidden")) {
+                mobileMenu.classList.add("hidden");
+            }
+        });
+    });
+    </script>
+</body>
 
 </body>
 
